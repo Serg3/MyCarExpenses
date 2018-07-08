@@ -1,0 +1,16 @@
+= form_with model: @transport, local: true do |f|
+  p
+    => f.label :name, 'Имя:'
+    = f.text_field :name
+  p
+    => f.label :mark, 'Марка:'
+    = f.text_field :mark
+  p
+    => f.label :model, 'Модель:'
+    = f.text_field :model
+  p
+    => f.label :edition_year, 'Год выпуска:'
+    = f.number_field :edition_year
+
+  p
+    = f.submit 'Создать'
