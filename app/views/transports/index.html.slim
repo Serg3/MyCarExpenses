@@ -1,0 +1,9 @@
+h3 Список транспорта
+
+table
+  tbody
+    tr
+      = render @transports
+
+p
+  = link_to 'Добавить транспорт', new_transport_path
