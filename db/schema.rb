@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_155111) do
+ActiveRecord::Schema.define(version: 2018_07_09_175225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenses", force: :cascade do |t|
+    t.bigint "transport_id"
+    t.date "date", null: false
+    t.integer "mileage", null: false
+    t.string "type", null: false
+    t.string "description"
+    t.decimal "amount", default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transport_id"], name: "index_expenses_on_transport_id"
+  end
 
   create_table "transports", force: :cascade do |t|
     t.string "name", null: false
@@ -25,4 +37,5 @@ ActiveRecord::Schema.define(version: 2018_07_08_155111) do
     t.index ["mark", "model", "edition_year"], name: "index_transports_on_mark_and_model_and_edition_year"
   end
 
+  add_foreign_key "expenses", "transports"
 end
