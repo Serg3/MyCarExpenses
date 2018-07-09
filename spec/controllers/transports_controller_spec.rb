@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TransportsController, type: :controller do
-  let(:transport) { create (:transport) }
+  let(:transport) { create(:transport) }
 
   describe 'GET #index' do
     let(:transports) { create_list(:transport, 2) }
