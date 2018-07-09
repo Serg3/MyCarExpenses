@@ -1,0 +1,21 @@
+= form_with model: [@transport, @expense], local: true do |f|
+  p
+    => f.label :date, 'Дата:'
+    = f.date_field :date
+  p
+    => f.label :mileage, 'Пробег:'
+    = f.number_field :mileage
+  p
+    => f.label :kind, 'Вид траты:'
+    = f.text_field :kind
+  p
+    => f.label :description, 'Описание:'
+    = f.text_field :description
+  p
+    => f.label :amount, 'Сумма:'
+    = f.number_field :amount,
+                     value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''),
+                     step: :any
+
+  p
+    = f.submit 'Записать'

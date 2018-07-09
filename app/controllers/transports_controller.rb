@@ -6,6 +6,7 @@ class TransportsController < ApplicationController
   end
 
   def show
+    @expenses = @transport.expenses
   end
 
   def new

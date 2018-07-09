@@ -5,3 +5,15 @@ p Марка: #{@transport.mark}
 p Модель: #{@transport.model}
 
 p Год выпуска: #{@transport.edition_year}
+
+p
+  = link_to 'Внести трату', new_transport_expense_path(@transport)
+
+p
+  - @expenses.each do |expense|
+    ul
+      li = expense.date
+      li = expense.mileage
+      li = expense.kind
+      li = expense.description
+      li = expense.amount
