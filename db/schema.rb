@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2018_07_09_175225) do
     t.bigint "transport_id"
     t.date "date", null: false
     t.integer "mileage", null: false
-    t.string "type", null: false
-    t.string "description"
+    t.string "kind", null: false
+    t.text "description"
     t.decimal "amount", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
